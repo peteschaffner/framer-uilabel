@@ -27,6 +27,14 @@ module.exports = class Label extends Layer
     # Apply the text styling to the `Layer`
     applyStyles @, options
 
+    # Handle label overflow (currently only string-end ellipsis support)
+    if options.textOverflow is "ellipsis"
+      labelText = @querySelector "div"
+      labelText.style.width = "#{@width + 1}px" # Hack
+      labelText.style.whiteSpace = "nowrap"
+      labelText.style.overflow = "hidden"
+      labelText.style.textOverflow = "ellipsis"
+
   @define "text",
     get: ->
       @_text
