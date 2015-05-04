@@ -7,8 +7,7 @@ it contains.
 ```shell
 $ git clone https://github.com/peteschaffner/framercli.git myProject
 $ cd myProject
-$ git submodule add https://github.com/peteschaffner/framer-label.git
-modules/label
+$ git submodule add https://github.com/peteschaffner/framer-label.git modules/label
 ```
 
 app.coffee:
