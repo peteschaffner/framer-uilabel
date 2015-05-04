@@ -1,10 +1,12 @@
 
 module.exports = class Label extends Layer
   constructor: (options={}) ->
+    options.name ?= "Label"
     options.text ?= "Label Text"
     options.html ?= options.text
     options.lineHeight ?= "normal"
     options.whiteSpace ?= "nowrap"
+    options.backgroundColor ?= "transparent"
 
     # Create and style a temp text node and style it accordingly
     # in order to get the intrinsic width and height
@@ -18,7 +20,6 @@ module.exports = class Label extends Layer
     super _.extend options,
       width: tempEl.offsetWidth
       height: tempEl.offsetHeight
-      backgroundColor: "transparent"
 
     # Remove temp text node after creating our `Layer` object
     tempEl.remove()
