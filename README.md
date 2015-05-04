@@ -1,4 +1,4 @@
-# Framer Label module
+# Framer `Label` module
 
 Create a layer that is the intrinsic size (height and width) of the text content
 it contains.
