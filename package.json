@@ -1,7 +1,7 @@
 {
-  "name": "framer-label",
+  "name": "framer-uilabel",
   "version": "0.0.1",
-  "description": "Label module for Framer.js",
+  "description": "UILabel module for Framer.js",
   "main": "index.coffee",
   "repository": {
     "type": "git",
