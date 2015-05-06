@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/peteschaffner/framer-label/issues"
   },
-  "homepage": "https://github.com/peteschaffner/framer-label"
+  "homepage": "https://github.com/peteschaffner/framer-label",
+  "browserify": {
+    "transform": ["coffeeify"]
+  }
 }
