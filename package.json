@@ -5,8 +5,10 @@
   "repository": "peteschaffner/framer-uilabel",
   "author": "pjschaffner@gmail.com",
   "main": "index.coffee",
+  "dependencies": {
+    "coffeeify": "^1.1.0"
+  },
   "devDependencies": {
-    "coffeeify": "^1.1.0",
     "framer-cli": "peteschaffner/framer-cli"
   },
   "scripts": {
