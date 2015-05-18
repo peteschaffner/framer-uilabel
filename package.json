@@ -5,9 +5,6 @@
   "repository": "peteschaffner/framer-uilabel",
   "author": "pjschaffner@gmail.com",
   "main": "index.coffee",
-  "dependencies": {
-    "coffeeify": "^1.1.0"
-  },
   "devDependencies": {
     "framer-cli": "peteschaffner/framer-cli"
   },
@@ -18,10 +15,5 @@
     "prototyping",
     "framerjs"
   ],
-  "license": "MIT",
-  "browserify": {
-    "transform": [
-      "coffeeify"
-    ]
-  }
+  "license": "MIT"
 }

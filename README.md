@@ -5,15 +5,14 @@ it contains. API and behavior ~inspired by iOS `UILabel`s.
 
 ## Usage
 ```shell
-$ git clone https://github.com/peteschaffner/framercli.git myProject
+$ framer myProject &
 $ cd myProject
 $ npm install --save peteschaffner/framer-uilabel
 ```
 
-app.coffee:
-```coffeescript
-UILabel = require "framer-uilabel"
+index.js:
+```javascript
+var UILabel = require('framer-uilabel')
 
-myLabel = new UILabel
-  text: "Hello World"
+var myLabel = new UILabel({ text: 'Hello World' })
 ```
