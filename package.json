@@ -1,19 +1,26 @@
 {
   "name": "framer-uilabel",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "UILabel module for Framer.js",
-  "repository": "peteschaffner/framer-uilabel",
-  "author": "pjschaffner@gmail.com",
-  "main": "index.coffee",
-  "devDependencies": {
-    "framer-cli": "peteschaffner/framer-cli"
+  "author": {
+    "name": "Pete Schaffner",
+    "email": "pjschaffner@gmail.com"
   },
-  "scripts": {
-    "start": "framer --module"
-  },
+  "license": "MIT",
   "keywords": [
     "prototyping",
     "framerjs"
   ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/peteschaffner/framer-uilabel.git"
+  },
+  "main": "index.coffee",
+  "devDependencies": {
+    "framer-cli": "^0.1.0"
+  },
+  "scripts": {
+    "start": "framer preview"
+  },
+  "framer": { "type": "module" }
 }
