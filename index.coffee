@@ -5,8 +5,8 @@ module.exports = class Label extends Layer
     options.text ?= "Label Text"
     options.html ?= options.text
     options.lineHeight ?= "normal"
-    options.whiteSpace ?= "nowrap"
     options.backgroundColor ?= "transparent"
+    options.lineClamp ?= 1
 
     # Create and style a temp text node and style it accordingly
     # in order to get the intrinsic width and height
@@ -18,8 +18,8 @@ module.exports = class Label extends Layer
     document.body.appendChild tempEl
 
     super _.extend options,
-      width: tempEl.offsetWidth
-      height: tempEl.offsetHeight
+      width: options.width or tempEl.offsetWidth
+      height: options.height or tempEl.offsetHeight
 
     # Remove temp text node after creating our `Layer` object
     tempEl.remove()
@@ -28,12 +28,16 @@ module.exports = class Label extends Layer
     applyStyles @, options
 
     # Handle label overflow (currently only string-end ellipsis support)
-    if options.textOverflow is "ellipsis"
-      labelText = @querySelector "div"
-      labelText.style.width = "#{@width + 1}px" # Hack
-      labelText.style.whiteSpace = "nowrap"
-      labelText.style.overflow = "hidden"
-      labelText.style.textOverflow = "ellipsis"
+    # `@width + 1` is a hack to ensure we don't truncate prematurely
+    labelText = @querySelector "div"
+    labelText.style.width = "#{@width + 1}px"
+    labelText.style.overflow = "hidden"
+    labelText.style.textOverflow = "ellipsis"
+    labelText.style.display = '-webkit-box'
+    labelText.style.webkitLineClamp = options.lineClamp
+    labelText.style.webkitBoxOrient = 'vertical'
+
+    @on "change:width", -> labelText.style.width = "#{@width + 1}px"
 
   @define "text",
     get: ->
